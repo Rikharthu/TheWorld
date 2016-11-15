@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<!--All html files must reside in wwwroot directory-->
+<head>
+    <title>The World - @ViewBag.Title</title>
+
+    <meta charset="utf-8" />
+    
+    <!-- ~/ <- root of our website -->
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+<body>
+
+    <div id="header">
+        Some Header.
+        <div>
+            <button id="sidebarToggle">Toogle Menu</button>
+            <input id="sidebarToggler" type="image" src="img/arrow.png" style="width: 20px; height:20px" />
+        </div>
+    </div>
+
+    <div id="sidebar">
+
+        <img src="~/img/user1.jpg" alt="headshot" class="headshot" />
+
+        <span id="username">Sam Haslings</span>
+
+        <ul class="menu">
+            <li class="active">
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div id="wrapper">
+        <div id="main">
+            
+            <!--Placeholder where to inject content-->
+            @RenderBody()
+        </div>
+
+        <div id="footer">
+            &copy; 2016 The World Ltd.
+        </div>
+    </div>
+
+    <!-- Add JQuery-->
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/side.js"></script>
+
+</body>
+</html>
